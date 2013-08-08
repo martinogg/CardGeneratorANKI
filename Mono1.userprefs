@@ -1,0 +1,49 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CardGenerator3\Pages\Page1.cs">
+    <Files>
+      <File FileName="CardGenerator3\MainWindow.cs" Line="1" Column="1" />
+      <File FileName="CardGenerator3\Program.cs" Line="17" Column="1" />
+      <File FileName="CardGenerator\Pages\Page1.cs" Line="14" Column="1" />
+      <File FileName="CardGenerator\Pages\Page0.cs" Line="1" Column="1" />
+      <File FileName="CardGenerator3\Pages\Page0.cs" Line="1" Column="1" />
+      <File FileName="CardGenerator3\Pages\Page1.cs" Line="17" Column="21" />
+      <File FileName="CardGenerator3\gtk-gui\MainWindow.cs" Line="39" Column="43" />
+      <File FileName="CardGenerator3\global.cs" Line="12" Column="6" />
+      <File FileName="CardGenerator3\gtk-gui\CardGenerator.Page0.cs" Line="31" Column="22" />
+      <File FileName="CardGenerator3\Model\CardGeneratorDB.cs" Line="94" Column="30" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="CardGenerator" expanded="True">
+            <Node name="Pages" expanded="True" />
+          </Node>
+          <Node name="CardGenerator3" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="Model" expanded="True" />
+            <Node name="Pages" expanded="True">
+              <Node name="Page1.cs" selected="True" />
+            </Node>
+            <Node name="Properties" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>reader[4]</Value>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="C:\Users\Public\Documents\monoProjects\Mono1\CardGenerator\Pages\Page1.cs" line="23" column="10" />
+      <Breakpoint file="C:\Users\Public\Documents\monoProjects\Mono1\CardGenerator\Pages\Page1.cs" line="14" column="7" />
+      <Breakpoint file="C:\Users\Public\Documents\monoProjects\Mono1\CardGenerator\Pages\Page0.cs" line="39" column="6" />
+      <Breakpoint file="C:\Users\Public\Documents\monoProjects\Mono1\CardGenerator3\Pages\Page1.cs" line="24" column="6" />
+      <Breakpoint file="C:\Users\Public\Documents\monoProjects\Mono1\CardGenerator3\Pages\Page1.cs" line="14" column="6" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

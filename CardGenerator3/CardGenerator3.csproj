@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C42EC133-F0E1-4F82-AC92-AA943CA46BFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CardGenerator3</RootNamespace>
+    <AssemblyName>CardGenerator3</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseAny|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Posix" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="gtk-gui\MainWindow.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Program.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="JSON\JSONReflector.cs" />
+    <Compile Include="JSON\JSONValue.cs" />
+    <Compile Include="JSON\JSONValueCollection.cs" />
+    <Compile Include="JSON\Collections\JSONArrayCollection.cs" />
+    <Compile Include="JSON\Collections\JSONObjectCollection.cs" />
+    <Compile Include="JSON\Values\JSONBoolValue.cs" />
+    <Compile Include="JSON\Values\JSONNumberValue.cs" />
+    <Compile Include="JSON\Values\JSONStringValue.cs" />
+    <Compile Include="Model\CardGeneratorDB.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Model\CardDefinitions.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Model\AudioFiles.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Model\CardOutput.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\Page0.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\Page1.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\Page2.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\Page3.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\Page5.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\Page4.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\DialogAddCardType.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\DialogAddFaceData.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\DialogRemoveColumn.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="Pages\DialogAddRows.cs">
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </Compile>
+    <Compile Include="gtk-gui\CardGenerator.Page0.cs" />
+    <Compile Include="gtk-gui\CardGenerator.Page1.cs" />
+    <Compile Include="gtk-gui\CardGenerator.Page2.cs" />
+    <Compile Include="gtk-gui\CardGenerator.Page3.cs" />
+    <Compile Include="gtk-gui\CardGenerator.Page5.cs" />
+    <Compile Include="gtk-gui\CardGenerator.Page4.cs" />
+    <Compile Include="gtk-gui\CardGenerator.DialogAddCardType.cs" />
+    <Compile Include="gtk-gui\CardGenerator.DialogAddFaceData.cs" />
+    <Compile Include="gtk-gui\CardGenerator.DialogRemoveColumn.cs" />
+    <Compile Include="gtk-gui\CardGenerator.DialogAddRows.cs" />
+    <Compile Include="global.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="sqlite3.dll">
+      <DeployService-Deploy>True</DeployService-Deploy>
+      <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+    </None>
+    <None Include="LICENSE.TXT" />
+    <None Include="README.TXT" />
+  </ItemGroup>
+</Project>

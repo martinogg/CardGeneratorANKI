@@ -35,6 +35,16 @@ namespace CardGenerator
 			}
 			fc.Destroy();
 		}
+
+		protected void onBnExportKLEIO (object sender, EventArgs e)
+		{
+			{
+				DialogExportKLEIO d = new DialogExportKLEIO ();
+				d.Run ();
+				d.Destroy ();
+			}
+
+		}
 	}
 }
 

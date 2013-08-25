@@ -18,6 +18,99 @@ namespace CardGenerator
 			eCARDORDERRANDOM,
 		};
 
+		public static void saveToKLEIOFile(String fileName)
+		{
+			StreamWriter fileout = new StreamWriter(fileName);
+			fileout.Write(textFromKLEIOOutput ());
+			fileout.Close ();
+		}
+
+		public static String textFromKLEIOOutput ()
+		{
+			StringWriter fileout = new StringWriter();
+
+			List<Dictionary<String, String>> outputTable = CardGeneratorDB.Instance.getDataFromTable(CardGeneratorDB.TABLECardOutput);
+
+			foreach (Dictionary<String, String> outputEntry in outputTable)
+			{
+				String CardDataID = outputEntry[CardGeneratorDB.COLUMNCardDataID];
+				String CardDefinitionID = outputEntry[CardGeneratorDB.COLUMNCardDefinitionID];
+
+
+				// ("+COLUMNCardOutputID+" INTEGER NOT NULL, "+COLUMNCardDefinitionID+" INTEGER, "+COLUMNCardDataID+" INTEGER)",
+				Dictionary<String, String> cardDefinition = CardGeneratorDB.Instance.getRowFromTable(CardGeneratorDB.TABLECardDefinitions, CardGeneratorDB.COLUMNCardDefinitionID, CardDefinitionID);
+				Dictionary<String, String> cardData = CardGeneratorDB.Instance.getRowFromTable(CardGeneratorDB.TABLECardData, CardGeneratorDB.COLUMNCardDataID, CardDataID);
+
+				StringWriter faceOutput = new StringWriter();
+				int iFace = 1;
+				bool bFirstFaceRun = true;
+				bool bContinue = true;
+				while (bContinue)
+				{
+					String faceColumn = "Face"+(iFace++);
+					if (cardDefinition.ContainsKey(faceColumn))
+					{
+						if (!bFirstFaceRun)
+						{
+							faceOutput.Write(",");
+						}
+						else
+						{
+							bFirstFaceRun = false;
+						}
+
+						String faceDefinition = cardDefinition[faceColumn];
+						List<CardDefinitions.CardDefClass> faceLanguages = CardDefinitions.faceCardStructureFromJSONString(faceDefinition);
+						bool bFirstRun = true; // first entry in a face
+
+						foreach (CardDefinitions.CardDefClass item in faceLanguages)
+						{
+							if (item.TYPE == false)
+							{
+							if (!bFirstRun)
+							{
+								faceOutput.Write(" - ");
+							}
+							else
+							{
+								bFirstRun = false;
+							}
+
+							if (item.TYPE == false)
+							{
+								faceOutput.Write(cardData[item.COLUMNSOURCE]);
+							}
+							else
+							{
+								// a sound, get the sound instead
+								//String filename = AudioFiles.generateFilename(item.LANGUAGECODE, cardData[item.COLUMNSOURCE]);
+								//faceOutput.Write("[sound:" + filename + "]");
+							}
+							}
+						}
+					}
+					else
+					{
+						bContinue = false;
+					}
+				}
+
+				String outLn = faceOutput.ToString();
+				fileout.WriteLine(outLn);
+
+				// ok, now build the faces from each 
+				// get faces data
+
+				// DE-JSON into class data
+
+				// build string for each JSON context
+
+			}
+			fileout.Close();
+
+			return fileout.ToString();
+		}
+
 		public static void saveToAnkiFile(String fileName)
 		{
 			StreamWriter fileout = new StreamWriter(fileName);

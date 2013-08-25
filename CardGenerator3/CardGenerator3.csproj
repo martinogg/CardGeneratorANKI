@@ -135,12 +135,16 @@
     <Compile Include="gtk-gui\CardGenerator.DialogRemoveColumn.cs" />
     <Compile Include="gtk-gui\CardGenerator.DialogAddRows.cs" />
     <Compile Include="global.cs" />
+    <Compile Include="Pages\DialogExportKLEIO.cs" />
+    <Compile Include="gtk-gui\CardGenerator.DialogExportKLEIO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="sqlite3.dll">
       <DeployService-Deploy>True</DeployService-Deploy>
       <Gettext-ScanForTranslations>False</Gettext-ScanForTranslations>
+      <DeployService-HasPathReferences>True</DeployService-HasPathReferences>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="LICENSE.TXT" />
     <None Include="README.TXT" />

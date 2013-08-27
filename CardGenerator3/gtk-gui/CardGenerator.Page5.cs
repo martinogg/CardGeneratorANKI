@@ -7,6 +7,7 @@ namespace CardGenerator
 		private global::Gtk.VBox vbox1;
 		private global::Gtk.Label label1;
 		private global::Gtk.Button bnExportANKI;
+		private global::Gtk.Button bnExportKleio;
 
 		protected virtual void Build ()
 		{
@@ -38,12 +39,24 @@ namespace CardGenerator
 			w2.Position = 1;
 			w2.Expand = false;
 			w2.Fill = false;
+			// Container child vbox1.Gtk.Box+BoxChild
+			this.bnExportKleio = new global::Gtk.Button ();
+			this.bnExportKleio.CanFocus = true;
+			this.bnExportKleio.Name = "bnExportKleio";
+			this.bnExportKleio.UseUnderline = true;
+			this.bnExportKleio.Label = global.Mono.Unix.Catalog.GetString ("Export to Kleio CSV file...");
+			this.vbox1.Add (this.bnExportKleio);
+			global::Gtk.Box.BoxChild w3 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.bnExportKleio]));
+			w3.Position = 2;
+			w3.Expand = false;
+			w3.Fill = false;
 			this.Add (this.vbox1);
 			if ((this.Child != null)) {
 				this.Child.ShowAll ();
 			}
 			this.Hide ();
 			this.bnExportANKI.Clicked += new global::System.EventHandler (this.onBnExportANKI);
+			this.bnExportKleio.Clicked += new global::System.EventHandler (this.onBnExportKLEIO);
 		}
 	}
 }

@@ -24,7 +24,7 @@ namespace CardGenerator
 			// Container child dialog1_VBox.Gtk.Box+BoxChild
 			this.label1 = new global::Gtk.Label ();
 			this.label1.Name = "label1";
-			this.label1.LabelProp = global::Mono.Unix.Catalog.GetString ("Copy and Paste text to KLEIO or export to file.Note: Sounds are not exported");
+			this.label1.LabelProp = global.Mono.Unix.Catalog.GetString ("Copy and Paste text to KLEIO or export to file.Note: Sounds are not exported");
 			w1.Add (this.label1);
 			global::Gtk.Box.BoxChild w2 = ((global::Gtk.Box.BoxChild)(w1 [this.label1]));
 			w2.Position = 0;
@@ -51,7 +51,7 @@ namespace CardGenerator
 			this.button26.CanFocus = true;
 			this.button26.Name = "button26";
 			this.button26.UseUnderline = true;
-			this.button26.Label = global::Mono.Unix.Catalog.GetString ("Export to File...");
+			this.button26.Label = global.Mono.Unix.Catalog.GetString ("Export to File...");
 			this.vbox2.Add (this.button26);
 			global::Gtk.Box.BoxChild w5 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.button26]));
 			w5.Position = 1;
